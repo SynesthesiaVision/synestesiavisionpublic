@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Renomear parada {{labelParada}}
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Fechar</span>
+                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label stacked>Apelido da parada</ion-label>
+            <ion-input type="text" [(ngModel)]="apelidoParada"></ion-input>
+        </ion-item>
+        
+    </ion-list>
+
+    <div padding>
+        <button ion-button color="primary" block (click)="setRenomear()">Salvar</button>
+    </div>    
+</ion-content>

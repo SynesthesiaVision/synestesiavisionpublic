@@ -1,0 +1,49 @@
+<!--
+  Generated template for the BluetoothConnectionVerifyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    
+	<ion-navbar navbar align-title="center">
+		<ion-title>Conexão com bluetooth</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	<!-- Button for scan disponible devices -->
+	<button ion-button block (click)="startScanning()">escanear</button>
+	
+	<!--<ion-list-header>
+		Paired Devices
+	</ion-list-header>-->
+	
+	<!--List of the paired devices -->
+	<!--<ion-item *ngFor="let device of pairedDevices">
+		{{device.name}}
+	</ion-item>-->
+	
+	<button ion-button block (click)="disconnect()">Desconectar</button>
+	
+    <ion-list>
+        <!-- Disponible devices to connect -->
+        <ion-list-header>
+            Dispositivos disponíveis
+        </ion-list-header>
+        <ion-item *ngFor='let device of unpairedDevices'>
+            <span (click)="selectDevice(device)">
+                {{device.name}}
+            </span>
+        </ion-item>        
+    </ion-list>
+
+	<button ion-button block (click)="synesthesia()">Tela principal</button>
+
+</ion-content>
+
+<ion-footer>
+    <p style="float: right;font-size: 15px; color: rgb(85, 90, 94);">v1.1</p>
+</ion-footer>

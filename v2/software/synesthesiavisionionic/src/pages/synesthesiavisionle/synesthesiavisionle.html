@@ -1,0 +1,35 @@
+<ion-header id="headerTitle">
+    <ion-navbar hideBackButton="true" navbar align-title="center">
+        <ion-title id=title>Synesthesia Vision<img alt="logo" height="40" src="assets/imgs/logo_synesthesia.png"
+                id="imgTitle"></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding id="page1" style="background-color:#fff;">
+
+    <!-- Espaçamento -->
+    <div class="spacer" style="width:300px;height:8px;" id="synesthesiaVision-spacer8"></div>
+
+    <!-- Verificar clima -->
+    <h4 id="synesthesiaVision-heading2" style="color:#000000;"> Funcionalidades: </h4>
+
+    <img src="assets/imgs/weather_forecast_96px.png" alt="Botão de previsão do tempo" (click)="checkWeather()"
+        style="display:block;width:45%;height:96;margin-left:auto;margin-right:auto;" />
+    <div class="spacer" style="width:300px;height:8px;" id="synesthesiaVision-spacer8"></div>
+
+
+    <button id="getParadaProxima" alt="Botão de verificação de paradas" ion-button style="height:57px" block
+        (click)="getParadaProxima()">
+        Verificar paradas </button>
+    <!--Verificar luminosidade-->
+    <button id="getLuminosidade" alt="Botão de verificação de luminosidade" ion-button style="height: 57px" block
+        (click)="getLuminosidade()">Verificar luminosidade</button>
+    <!-- Espaçamento -->
+    <button id="startGame" alt="Botão para iniciar o jogo" ion-button style="height: 57px" block (click)="startGame()">
+        Vamos jogar um jogo? </button>
+
+
+</ion-content>
+<ion-footer>
+    <button id="voltar" alt="Botão de voltar para conexão com bluetooth" ion-button style="height:35px"
+        color="pauseButton" block (click)="voltarConexaoBluetooth()">Voltar a tela de conexão</button>
+</ion-footer>
