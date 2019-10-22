@@ -100,10 +100,5 @@ export class RotasPage {
 
       })
   }
-
-  iniciarNavegacao(){
-    
-  }
-
   
 }

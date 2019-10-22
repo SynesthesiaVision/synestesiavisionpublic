@@ -65,7 +65,7 @@ export class SynesthesiavisionlePage {
 
     this.ble.connect(device.id).subscribe(
       peripheral => this.onConnected(peripheral),
-      peripheral => this.showAlert('Disconnected', 'The peripheral unexpectedly disconnected')
+      peripheral => console.log('')      
     )
 
   }
@@ -87,13 +87,12 @@ export class SynesthesiavisionlePage {
 
   onDataChange(buffer: ArrayBuffer) {
     console.log("String: " + new TextDecoder('utf-8').decode(buffer));
+    this.getFunction(new TextDecoder('utf-8').decode(buffer));
   }
 
 
   ionViewDidLoad() {
     this.permissionsProvider.getPermissions();
-
-    this.bluetoothSubscription = this.getBluetoothData();
   }
 
   ionViewWillLeave() {
@@ -104,10 +103,6 @@ export class SynesthesiavisionlePage {
     )
   }
 
-  ionViewWillEnter() {
-    this.bluetoothSubscription = this.getBluetoothData();
-  }
-
 	/**
 	 * Uses the weatherForecastProvider to verify the user's Position 
 	 * and it's weather.
@@ -116,24 +111,6 @@ export class SynesthesiavisionlePage {
     this.weatherForecastProvider.startChecking();
   }
 
-	/**
-     * Handle the data which comes through Bluetooth socket.
-     */
-  private getBluetoothData() {
-    return this.bluetoothProvider.getBluetoothData().subscribe((data) => {
-
-      //Realiza o processamento dos dados
-      this.bluetoothProvider.processData(data).then((result) => {
-
-        console.log(result);
-
-        if (!result.includes('true')) {
-          this.getFunction(result);
-        }
-
-      });
-    });
-  }
 
   getFunction(bluetoothData) {
 

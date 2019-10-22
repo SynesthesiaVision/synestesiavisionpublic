@@ -73,13 +73,9 @@ export class GamePontuacaoPage {
     this.timerVar = Observable.interval(1000).subscribe(x => {
       console.log(x);
       this.timerVal = x;
-      this.pontuacaoGerador();
     })
   }
 
-  pontuacaoGerador() {
-    this.pontuacao--;
-  }
   pontuacaoBateu() {
     for (var i = 0; i < 20; i++) {
       this.pontuacao--;
@@ -102,5 +98,6 @@ export class GamePontuacaoPage {
 
   stopGame() {
     this.timerVar.unsubscribe();
+    this.pontuacao = this.pontuacao/this.timerVal;
   }
 }
