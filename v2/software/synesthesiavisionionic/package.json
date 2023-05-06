@@ -36,7 +36,7 @@
         "@ionic/storage": "2.1.3",
         "@mobiscroll/angular-lite": "^4.7.3",
         "cordova-android": "7.1.1",
-        "cordova-ios": "4.5.5",
+        "cordova-ios": "6.3.0",
         "cordova-plugin-actionsheet": "^2.3.3",
         "cordova-plugin-advanced-http": "^1.11.1",
         "cordova-plugin-android-permissions": "^1.0.0",
